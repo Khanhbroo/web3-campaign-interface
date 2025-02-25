@@ -10,7 +10,7 @@ const Icon = ({
     return (
         <div
             className={`w-[48px] h-[48px] rounded-[10px] ${
-                isActive && isActive === name && 'bg-[#2c2f32]'
+                isActive && isActive === name && 'bg-[#A3D1C6]'
             } flex justify-center items-center ${
                 !disabled && 'cursor-pointer'
             } ${styles}`}

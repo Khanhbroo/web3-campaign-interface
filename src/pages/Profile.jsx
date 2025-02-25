@@ -23,11 +23,17 @@ const Profile = () => {
 
     return (
         <div>
-            <DisplayCampaigns
-                title="User Campaigns"
-                isLoading={isLoading}
-                campaigns={campaigns}
-            />
+            {!address ? (
+                <div className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183]">
+                    Connect your wallet first
+                </div>
+            ) : (
+                <DisplayCampaigns
+                    title="User Campaigns"
+                    isLoading={isLoading}
+                    campaigns={campaigns}
+                />
+            )}
         </div>
     );
 };

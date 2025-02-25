@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { createAppKit } from '@reown/appkit/react';
@@ -35,7 +34,7 @@ createAppKit({
 
 function App() {
     return (
-        <div className="relative sm:p-8 p-4 bg-[#13131a] min-h-screen flex">
+        <div className="relative sm:p-8 p-4 bg-[#FBFFE4] min-h-screen flex">
             <div className="sm:flex hidden mr-10 relative">
                 <Sidebar />
             </div>
