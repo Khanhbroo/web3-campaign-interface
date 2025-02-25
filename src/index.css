@@ -12,5 +12,12 @@
 
 input[type='date']::-webkit-calendar-picker-indicator {
     cursor: pointer;
-    filter: invert(0.8);
+    /* filter: invert(0.8); */
+    color-scheme: dark;
+    color: #173622;
+    background-color: #3d8d7a;
+    border: 1px solid #3d8d7a;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
 }
