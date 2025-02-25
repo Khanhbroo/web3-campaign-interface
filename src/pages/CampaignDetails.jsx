@@ -170,12 +170,22 @@ const CampaginDetails = () => {
                                 </p>
                             </div>
 
-                            <Button
-                                btnType="button"
-                                title="Fund Campaign"
-                                styles="w-full bg-[#3D8D7A] text-white"
-                                handleClick={handleDonate}
-                            />
+                            {!address ? (
+                                <Button
+                                    btnType="button"
+                                    title="You need to connect your wallet first"
+                                    styles="w-full bg-[#3D8D7A] text-white opacity-50 cursor-not-allowed"
+                                    handleClick={() => {}}
+                                    disabled
+                                />
+                            ) : (
+                                <Button
+                                    btnType="button"
+                                    title="Fund Campaign"
+                                    styles="w-full bg-[#3D8D7A] text-white"
+                                    handleClick={handleDonate}
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

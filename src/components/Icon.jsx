@@ -1,12 +1,4 @@
-const Icon = ({
-    styles,
-    name,
-    imgUrl,
-    isActive,
-    disabled,
-    handleClick,
-    children,
-}) => {
+const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => {
     return (
         <div
             className={`w-[48px] h-[48px] rounded-[10px] ${

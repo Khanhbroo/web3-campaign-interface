@@ -4,6 +4,7 @@ import {
     useAppKit,
     useAppKitProvider,
     useAppKitAccount,
+    useDisconnect,
 } from '@reown/appkit/react';
 import {
     BrowserProvider,
@@ -17,6 +18,7 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
     const { open } = useAppKit();
+    const { disconnect } = useDisconnect();
     const { walletProvider } = useAppKitProvider('eip155');
     const { address, isConnected } = useAppKitAccount();
 
@@ -126,6 +128,7 @@ export const StateContextProvider = ({ children }) => {
                 getUserCampaigns,
                 fund,
                 getFunders,
+                disconnect,
             }}
         >
             {children}

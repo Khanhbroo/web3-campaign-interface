@@ -2,14 +2,20 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useStateContext } from '../context';
 
-import { logo, sun } from '../assets';
+import { logo, sun, logout } from '../assets';
 import { navLinks } from '../constants';
 import { Icon } from './';
 
 const Sidebar = () => {
-    const { open, address } = useStateContext();
+    const { open, address, disconnect } = useStateContext();
     const navigate = useNavigate();
     const [isActive, setIsActive] = useState('dashboard');
+
+    const handleLogOut = async () => {
+        if (address) {
+            await disconnect();
+        }
+    };
 
     return (
         <div className="flex justify-between items-center flex-col sticky top-5">
@@ -37,6 +43,13 @@ const Sidebar = () => {
                             }}
                         />
                     ))}
+                    {address && (
+                        <Icon
+                            styles="w-1/2 h-1/2 grayscale"
+                            imgUrl={logout}
+                            handleClick={handleLogOut}
+                        />
+                    )}
                 </div>
 
                 <Icon styles="bg-[#B3D8A8] shadow-secondary" imgUrl={sun} />
