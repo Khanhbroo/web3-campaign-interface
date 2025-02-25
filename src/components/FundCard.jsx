@@ -49,7 +49,7 @@ const FundCard = ({
                 <div className="flex justify-between flex-wrap mt-[16px] gap-2">
                     <div className="flex flex-col">
                         <h4 className="font-epilogue font-semibold text-[14px] text-[#306f44] leading-[22px]">
-                            {amountCollected}
+                            Collected: {amountCollected} ETH
                         </h4>
                         <p className="mt-[3px] font-epilogue font-normal text-[12px] leading-[18px] text-[#3D8D7A] sm:max-w[120px] truncate">
                             Raise of {target} ETH
@@ -74,11 +74,7 @@ const FundCard = ({
                             className="w-1/2 h-1/2 object-contain"
                         />
                     </div>
-                    <a
-                        className="font-epilogue font-normal text-[12px] text-[#3D8D7A]"
-                        target="_blank"
-                        href={`https://sepolia.etherscan.io/address/${owner}`}
-                    >
+                    <a className="font-epilogue font-normal text-[12px] text-[#3D8D7A]">
                         Owner{' '}
                         <span className="text-[#173622]">
                             {shortenAddress(owner)}

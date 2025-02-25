@@ -7,7 +7,8 @@ import { navLinks } from '../constants';
 import { Icon } from './';
 
 const Sidebar = () => {
-    const { open, address, disconnect } = useStateContext();
+    const { open, address, disconnect, setToggleTheme, toggleTheme } =
+        useStateContext();
     const navigate = useNavigate();
     const [isActive, setIsActive] = useState('dashboard');
 
@@ -15,6 +16,10 @@ const Sidebar = () => {
         if (address) {
             await disconnect();
         }
+    };
+
+    const handleToggleTheme = () => {
+        setToggleTheme(!toggleTheme);
     };
 
     return (
@@ -52,7 +57,11 @@ const Sidebar = () => {
                     )}
                 </div>
 
-                <Icon styles="bg-[#B3D8A8] shadow-secondary" imgUrl={sun} />
+                <Icon
+                    styles="bg-[#B3D8A8] shadow-secondary"
+                    imgUrl={sun}
+                    handleClick={handleToggleTheme}
+                />
             </div>
         </div>
     );

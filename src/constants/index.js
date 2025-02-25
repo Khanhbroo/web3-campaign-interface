@@ -35,11 +35,4 @@ export const navLinks = [
         imgUrl: profile,
         link: '/profile',
     },
-    // {
-    //     name: 'logout',
-    //     imgUrl: logout,
-    //     link: '/',
-    //     disabled: true,
-    //     close: true,
-    // },
 ];

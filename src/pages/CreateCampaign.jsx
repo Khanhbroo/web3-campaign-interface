@@ -10,7 +10,7 @@ import { checkIfImage } from '../utils';
 const CreateCampaign = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
-    const { createCampaign } = useStateContext();
+    const { createCampaign, address, open } = useStateContext();
     const [form, setForm] = useState({
         name: '',
         title: '',
@@ -40,6 +40,10 @@ const CreateCampaign = () => {
                 setForm({ ...form, image: '' });
             }
         });
+    };
+
+    const handleConnectWallet = async () => {
+        await open();
     };
 
     return (
@@ -134,11 +138,20 @@ const CreateCampaign = () => {
                 />
 
                 <div className="flex justify-center items-center mt-[40px]">
-                    <Button
-                        btnType="submit"
-                        title="Create a new campaign"
-                        styles="flex-1 bg-[#3D8D7A] text-white"
-                    />
+                    {!address ? (
+                        <Button
+                            btnType="button"
+                            title="Connect wallet to create campaign"
+                            styles="flex-1 bg-[#3D8D7A] text-white"
+                            handleClick={handleConnectWallet}
+                        />
+                    ) : (
+                        <Button
+                            btnType="submit"
+                            title="Create a new campaign"
+                            styles="flex-1 bg-[#3D8D7A] text-white"
+                        />
+                    )}
                 </div>
             </form>
         </div>

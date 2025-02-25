@@ -23,11 +23,17 @@ const Home = () => {
 
     return (
         <div>
-            <DisplayCampaigns
-                title="All Campaigns"
-                isLoading={isLoading}
-                campaigns={campaigns}
-            />
+            {!address ? (
+                <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#3D8D7A]">
+                    Connect wallet to see all campaigns
+                </p>
+            ) : (
+                <DisplayCampaigns
+                    title="All Campaigns"
+                    isLoading={isLoading}
+                    campaigns={campaigns}
+                />
+            )}
         </div>
     );
 };

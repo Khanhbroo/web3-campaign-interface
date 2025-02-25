@@ -24,6 +24,8 @@ export const StateContextProvider = ({ children }) => {
 
     const [contract, setContract] = useState(null);
 
+    const [toggleTheme, setToggleTheme] = useState(false);
+
     const fetchContractData = async () => {
         let ethersProvider, signer;
         if (walletProvider) {
@@ -86,7 +88,11 @@ export const StateContextProvider = ({ children }) => {
 
     const getUserCampaigns = async () => {
         const campaigns = await getCampaigns();
+
         const filteredCampaigns = campaigns.filter((campaign) => {
+            if (!campaign?.owner) {
+                return false;
+            }
             return campaign.owner.toLowerCase() === address.toLowerCase();
         });
         return filteredCampaigns;
@@ -129,6 +135,8 @@ export const StateContextProvider = ({ children }) => {
                 fund,
                 getFunders,
                 disconnect,
+                toggleTheme,
+                setToggleTheme,
             }}
         >
             {children}

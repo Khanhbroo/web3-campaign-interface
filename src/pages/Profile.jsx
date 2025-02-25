@@ -32,6 +32,7 @@ const Profile = () => {
                     title="User Campaigns"
                     isLoading={isLoading}
                     campaigns={campaigns}
+                    address={address}
                 />
             )}
         </div>

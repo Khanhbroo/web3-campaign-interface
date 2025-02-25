@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import { createAppKit } from '@reown/appkit/react';
@@ -6,6 +7,7 @@ import { sepolia } from '@reown/appkit/networks';
 
 import { Sidebar, Navbar } from './components';
 import { CampaginDetails, CreateCampaign, Home, Profile } from './pages';
+import { useStateContext } from './context';
 
 // Get projectId
 const projectId = import.meta.env.VITE_WALLET_CONNECT_ID;
@@ -33,8 +35,19 @@ createAppKit({
 });
 
 function App() {
+    let themeMain = 'bg-[#FBFFE4]';
+    const { toggleTheme } = useStateContext();
+
+    if (toggleTheme) {
+        themeMain = 'bg-[#181a09]';
+    } else {
+        themeMain = 'bg-[#FBFFE4]';
+    }
+
     return (
-        <div className="relative sm:p-8 p-4 bg-[#FBFFE4] min-h-screen flex">
+        <div
+            className={`relative sm:p-8 p-4 ${themeMain} min-h-screen flex transition-all duration-500`}
+        >
             <div className="sm:flex hidden mr-10 relative">
                 <Sidebar />
             </div>

@@ -89,8 +89,13 @@ const CampaginDetails = () => {
                                 />
                             </div>
                             <div>
-                                <h4 className="font-epilogue font-semibold text-[14px] text-[#173622] break-all">
-                                    {state.owner}
+                                <h4 className="font-epilogue font-semibold text-[14px] text-[#173622] hover:opacity-80 break-all">
+                                    <a
+                                        target="_blank"
+                                        href={`https://sepolia.etherscan.io/address/${state.owner}`}
+                                    >
+                                        {state.owner}
+                                    </a>
                                 </h4>
                                 <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#3D8D7A]">
                                     10 Campaigns
