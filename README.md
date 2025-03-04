@@ -36,7 +36,7 @@ npm install
 First, create a `.env` file and add your **Project ID** and **Alchemy Sepolia Key**:  
 
 ```env
-VITE_PROJECT_ID=YOUR_PROJECT_ID  
+VITE_WALLET_CONNECT_ID=YOUR_PROJECT_ID  
 VITE_ALCHEMY_SEPOLIA_KEY=YOUR_SEPOLIA_KEY  
 ```
 
@@ -59,7 +59,8 @@ npm run dev
 ```
 Once the development server starts, open **http://localhost:5173/** in your browser to view the project. Your application should now be visible, similar to the example shown below:
 
-![image](https://github.com/user-attachments/assets/48d1f759-bbb6-485f-adf7-b23327b21f4b)
+![image](https://github.com/user-attachments/assets/2018d16c-0997-4626-9a0a-1ed4852d3281)
+
 
 ## Contributing  
 Contributions are welcome! If you’d like to improve this project, feel free to submit a pull request. Please ensure your contributions follow best practices and include clear documentation.  
