@@ -128,9 +128,13 @@ const CampaginDetails = () => {
                                         key={index}
                                         className="flex justify-between items-center gap-4"
                                     >
-                                        <p className="font-epilogue font-normal text-[16px] text-[#306f44] leading-[26px] break-all">
+                                        <a
+                                            className="font-epilogue font-normal text-[16px] text-[#306f44] leading-[26px] hover:opacity-70 break-all"
+                                            target="_blank"
+                                            href={`https://sepolia.etherscan.io/address/${funder.funder}`}
+                                        >
                                             {index + 1}. {funder.funder}
-                                        </p>
+                                        </a>
                                         <p className="font-epilogue font-normal text-[16px] text-[#3D8D7A] leading-[26px] break-all">
                                             {funder.funded} ETH
                                         </p>

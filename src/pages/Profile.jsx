@@ -24,7 +24,7 @@ const Profile = () => {
     return (
         <div>
             {!address ? (
-                <div className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183]">
+                <div className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#3D8D7A]">
                     Connect your wallet first
                 </div>
             ) : (
