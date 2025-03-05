@@ -1,0 +1,31 @@
+<svg width="200px" height="200px" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes spinEaseOut {
+      0% { transform: rotateY(0deg); }
+      20% { transform: rotateY(180deg); } /* Starts fast */
+      100% { transform: rotateY(360deg); } /* Slows down before looping */
+    }
+    .rotateEase {
+      animation: spinEaseOut 4s infinite ease-out;
+      transform-origin: center;
+    }
+  </style>
+  <g class="rotateEase">
+    <!-- Hexagon Outline - Thicker Stroke -->
+    <polygon points="150,30 260,100 260,200 150,270 40,200 40,100" 
+      fill="none" stroke="black" stroke-width="12"/>
+
+    <!-- Inner Lines - Even Thicker -->
+    <line x1="150" y1="30" x2="150" y2="270" stroke="#A3D1C6" stroke-width="10"/>
+    <line x1="40" y1="100" x2="260" y2="200" stroke="#A3D1C6" stroke-width="10"/>
+    <line x1="40" y1="200" x2="260" y2="100" stroke="#A3D1C6" stroke-width="10"/>
+    
+    <!-- Connection Nodes - Larger -->
+    <circle cx="150" cy="30" r="12" fill="#A3D1C6"/>
+    <circle cx="260" cy="100" r="12" fill="#A3D1C6"/>
+    <circle cx="260" cy="200" r="12" fill="#A3D1C6"/>
+    <circle cx="150" cy="270" r="12" fill="#A3D1C6"/>
+    <circle cx="40" cy="200" r="12" fill="#A3D1C6"/>
+    <circle cx="40" cy="100" r="12" fill="#A3D1C6"/>
+  </g>
+</svg>
